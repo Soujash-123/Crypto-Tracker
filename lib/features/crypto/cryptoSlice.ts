@@ -11,6 +11,14 @@ const initialState: CryptoState = {
   ws: null,
   status: "idle",
   error: null,
+  filters: {
+    search: "",
+    performance: "all"
+  },
+  sort: {
+    field: null,
+    direction: "desc"
+  }
 }
 
 // Supported cryptocurrencies
@@ -62,6 +70,15 @@ const cryptoSlice = createSlice({
       state.selectedCrypto = null
       state.candlestickData = []
     },
+    setSearchFilter: (state, action: PayloadAction<string>) => {
+      state.filters.search = action.payload
+    },
+    setPerformanceFilter: (state, action: PayloadAction<'all' | 'gain' | 'loss'>) => {
+      state.filters.performance = action.payload
+    },
+    setSortConfig: (state, action: PayloadAction<{ field: keyof CryptoData; direction: 'asc' | 'desc' }>) => {
+      state.sort = action.payload
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -227,6 +244,9 @@ export const {
   updateCryptoData,
   setSelectedCrypto,
   clearSelectedCrypto,
+  setSearchFilter,
+  setPerformanceFilter,
+  setSortConfig
 } = cryptoSlice.actions
 
 export default cryptoSlice.reducer

@@ -1,4 +1,5 @@
 import type { RootState } from "@/lib/store"
+import type { CryptoData } from "@/lib/types"
 
 // Select the entire crypto state
 export const selectCryptoState = (state: RootState) => state.crypto
@@ -24,4 +25,44 @@ export const selectSelectedCryptoData = (state: RootState) => {
   if (!selectedSymbol) return null
 
   return state.crypto.cryptoList.find((crypto) => crypto.symbol === selectedSymbol) || null
+}
+
+// Select the filtered and sorted crypto list
+export const selectFilteredCryptoList = (state: RootState) => {
+  let filtered = [...state.crypto.cryptoList]
+
+  // Apply search filter
+  if (state.crypto.filters.search) {
+    const searchTerm = state.crypto.filters.search.toLowerCase()
+    filtered = filtered.filter(
+      crypto => 
+        crypto.name.toLowerCase().includes(searchTerm) || 
+        crypto.symbol.toLowerCase().includes(searchTerm)
+    )
+  }
+
+  // Apply performance filter
+  if (state.crypto.filters.performance !== 'all') {
+    filtered = filtered.filter(crypto => {
+      const isGain = crypto.priceChange24h >= 0
+      return state.crypto.filters.performance === 'gain' ? isGain : !isGain
+    })
+  }
+
+  // Apply sorting
+  if (state.crypto.sort.field) {
+    filtered.sort((a, b) => {
+      const aVal = a[state.crypto.sort.field!]
+      const bVal = b[state.crypto.sort.field!]
+      const modifier = state.crypto.sort.direction === 'asc' ? 1 : -1
+      
+      if (typeof aVal === 'string' && typeof bVal === 'string') {
+        return aVal.localeCompare(bVal) * modifier
+      }
+      
+      return ((aVal as number) - (bVal as number)) * modifier
+    })
+  }
+
+  return filtered
 }

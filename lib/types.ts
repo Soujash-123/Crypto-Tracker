@@ -5,6 +5,14 @@ export interface CryptoState {
   ws: WebSocket | null
   status: "idle" | "loading" | "succeeded" | "failed"
   error: string | null
+  filters: {
+    search: string
+    performance: 'all' | 'gain' | 'loss'
+  }
+  sort: {
+    field: keyof CryptoData | null
+    direction: 'asc' | 'desc'
+  }
 }
 
 // Cryptocurrency data
