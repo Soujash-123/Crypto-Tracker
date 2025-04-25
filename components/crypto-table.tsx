@@ -198,7 +198,7 @@ export default function CryptoTable() {
                     {formatPercentage(crypto.priceChange24h)}
                   </div>
                 </td>
-                <td className={`p-3 text-right ${crypto.priceChange1h >= crypto.priceChange7d ? "text-green-500" : "text-red-500"}`}>
+                <td className={`p-3 text-right ${crypto.priceChange7d >= 0 ? "text-green-500" : "text-red-500"}`}>
                   <div className="flex items-center justify-end">
                     {crypto.priceChange7d >= 0 ? (
                       <ArrowUp className="w-4 h-4 mr-1" />
@@ -218,7 +218,7 @@ export default function CryptoTable() {
                 </td>
                 <td className="p-3 w-64">
                   <div className="cursor-pointer w-full" onClick={() => handleChartClick(crypto.symbol)}>
-                    <SparklineChart data={crypto.sparkline7d} color={crypto.priceChange1h >= crypto.priceChange7d ? "#10b981" : "#ef4444"} />
+                    <SparklineChart data={crypto.sparkline7d} color={crypto.priceChange7d >= 0 ? "#10b981" : "#ef4444"} />
                   </div>
                 </td>
               </tr>
