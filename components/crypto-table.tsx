@@ -198,7 +198,7 @@ export default function CryptoTable() {
                     {formatPercentage(crypto.priceChange24h)}
                   </div>
                 </td>
-                <td className={`p-3 text-right ${crypto.priceChange7d >= 0 ? "text-green-500" : "text-red-500"}`}>
+                <td className={`p-3 text-right ${crypto.priceChange1h >= crypto.priceChange7d ? "text-green-500" : "text-red-500"}`}>
                   <div className="flex items-center justify-end">
                     {crypto.priceChange7d >= 0 ? (
                       <ArrowUp className="w-4 h-4 mr-1" />
