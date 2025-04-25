@@ -70,7 +70,7 @@ export default function CryptoTable() {
               <td className="p-3">{index + 1}</td>
               <td className="p-3">
                 <img
-                  src={`https://cryptoicons.org/api/icon/${crypto.symbol.toLowerCase()}/30`}
+                  src={`/cryptologo/${crypto.symbol.toLowerCase()}.png`}
                   alt={crypto.name}
                   className="w-6 h-6"
                   onError={(e) => {

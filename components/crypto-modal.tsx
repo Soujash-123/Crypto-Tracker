@@ -72,7 +72,7 @@ export default function CryptoModal() {
         <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
           <div className="flex items-center">
             <img
-              src={`https://cryptoicons.org/api/icon/${cryptoData.symbol.toLowerCase()}/30`}
+              src={`/cryptologo/${cryptoData.symbol.toLowerCase()}.png`}
               alt={cryptoData.name}
               className="w-8 h-8 mr-3"
               onError={(e) => {
