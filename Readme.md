@@ -4,7 +4,7 @@ A modern cryptocurrency tracking application built with Next.js, featuring real-
 
 ## Demo
 
-[![Crypto Tracker Demo](https://cdn.loom.com/sessions/thumbnails/6bfd490772df4ffbbe09f26c4a778886-with-play.gif)](https://www.loom.com/share/6bfd490772df4ffbbe09f26c4a778886?sid=f4f25cb4-8f84-4b19-8597-3741b81e3fa6)
+[![Crypto Tracker Demo](https://www.loom.com/share/6bfd490772df4ffbbe09f26c4a778886?sid=f4f25cb4-8f84-4b19-8597-3741b81e3fa6)
 
 ## Features
 
