@@ -16,7 +16,7 @@ export default function SparklineChart({ data, color }: SparklineChartProps) {
 
   return (
     <ResponsiveContainer width="200%" height={40}>
-      <LineChart data={chartData} style={{ width: '200%', marginLeft: '-25%' }}>
+      <LineChart data={chartData} style={{ width: '100%' }}>
         <YAxis domain={[minValue, maxValue]} hide />
         <Line
           type="monotone"
