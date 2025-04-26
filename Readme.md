@@ -6,7 +6,7 @@ A modern cryptocurrency tracking application built with Next.js, featuring real-
 
 Watch the live demo below:
 
-[![Watch the video](https://img.youtube.com/vi/_5tFXJQIzi4/0.jpg)](https://www.youtube.com/watch?v=_5tFXJQIzi4)
+[![Watch the video](https://www.loom.com/share/6bfd490772df4ffbbe09f26c4a778886?sid=f4f25cb4-8f84-4b19-8597-3741b81e3fa6)](https://www.loom.com/share/6bfd490772df4ffbbe09f26c4a778886?sid=f4f25cb4-8f84-4b19-8597-3741b81e3fa6)
 
 https://www.loom.com/share/6bfd490772df4ffbbe09f26c4a778886?sid=f4f25cb4-8f84-4b19-8597-3741b81e3fa6
 
